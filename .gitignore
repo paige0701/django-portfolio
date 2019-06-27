@@ -26,3 +26,27 @@ yarn-error.log*
 .idea
 /.idea
 /idea
+
+*.pyc
+*.db
+*.pid
+# django migrations
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+
+# mypy
+.mypy_cache/
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+__pycache__
