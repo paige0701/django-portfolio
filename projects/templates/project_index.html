@@ -2,11 +2,12 @@
 {% block title %}Project list{% endblock %}
 {% block content %}
     {% load static %}
+    <a href="">Add a project</a>
+    <br>
+
     {% for project in projects %}
         {{ project.title }}
         <img src="{% static project.image %}" alt="" style="width: 300px; height :300px">
         <a href="{% url 'project_detail' project.pk %}">detail</a>
     {% endfor %}
 {% endblock %}
-
-
