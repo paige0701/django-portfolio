@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import CreateForm
 
 # Create your views here.
@@ -36,7 +36,9 @@ def create_project(request):
         project.description = data.get('description')
         project.technology = data.get('technology')
         project.image = data.get('image')
+        project.author = request.user
 
         project.save()
-        return project_index(request)
+        return redirect('project_index')
+
 
