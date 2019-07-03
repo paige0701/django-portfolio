@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 /env
 
+
 # dependencies
 
 # testing
@@ -41,6 +42,7 @@ yarn-error.log*
 # virtualenv
 .venv
 venv/
+/venv
 ENV/
 
 # Byte-compiled / optimized / DLL files
