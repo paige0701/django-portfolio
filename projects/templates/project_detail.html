@@ -1,1 +1,24 @@
-{{ project.title }}
+{% extends 'base.html'%}
+{% block title %}Project detail{% endblock %}
+{% block content %}
+    <table>
+        <theader>
+            <tr>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Technology</td>
+                <td>Image</td>
+            </tr>
+        </theader>
+        <tbody>
+            <tr>
+                <td>{{ project.title }}</td>
+                <td>{{ project.description }}</td>
+                <td>{{ project.technology }}</td>
+                <td><img src="{{ project.image }}" alt=""></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}

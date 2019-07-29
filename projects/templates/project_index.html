@@ -5,12 +5,20 @@
 {% endblock %}
 {% block content %}
     {% load static %}
-    <a href="">Add a project</a>
+    <a href="{% url 'create_project' %}">Add a project</a>
     <br>
-
-    {% for project in projects %}
-        {{ project.title }}
-        <img src="{% static project.image %}" alt="" style="width: 300px; height :300px">
-        <a href="{% url 'project_detail' project.pk %}">detail</a>
-    {% endfor %}
+    <ul>
+        {% for project in projects %}
+            <li>
+                <div>{{ project.title }}</div>
+                <div>
+                    <img src="{{ project.image }}" alt="" style="width: 300px; height :300px">
+                </div>
+                <div>
+                    <a href="{% url 'project_detail' project.pk %}">detail</a>
+                </div>
+                <div>{{ project.author.username }}</div>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

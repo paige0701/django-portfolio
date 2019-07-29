@@ -3,18 +3,20 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-        Hi {{ user.username }}
-        <a href="{% url 'logout' %}">logout</a>
-
-        <a href="{% url 'project_index' %}">Project list</a>
-
+        <div>Hi {{ user.username }}</div>
+        <span>
+            <a href="{% url 'logout' %}">logout</a>
+        </span>
+        <span>
+            <a href="{% url 'project_index' %}">Project list</a>
+        </span>
     {% else %}
-        <p>You are not logged in</p>
-        <a href="{% url 'login' %}">login</a>
-        <a href="{% url 'signup' %}">signup</a>
+        <div>You are not logged in</div>
+        <span>
+            <a href="{% url 'login' %}">Login</a>
+        </span>
+        <span>
+            <a href="{% url 'signup' %}">Signup</a>
+        </span>
     {% endif %}
-
-
-
-
 {% endblock %}
