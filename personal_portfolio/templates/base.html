@@ -25,16 +25,41 @@
             margin-left: auto;
         }
 
+        .header-right {
+            position: relative; justify-content: flex-end; text-align: right
+        }
 
     </style>
 </head>
 <body>
-<header><div class="container">Home {% block header%}{% endblock %}</div></header>
+<header>
+    <div class="container">
+        <a href="{% url 'home' %}">Home</a>
+        {% if user.is_authenticated %}
+        <div class="header-right">
+             <span>Hi {{ user.username }}</span>
+            <span>
+                <a href="{% url 'logout' %}">logout</a>
+            </span>
+         </div>
+    {% else %}
+         <div class="header-right">
+            <span>You are not logged in</span>
+            <span>
+                <a href="{% url 'login' %}">Login</a>
+            </span>
+            <span>
+                <a href="{% url 'signup' %}">Signup</a>
+            </span>
+         </div>
+    {% endif %}
+    </div>
+</header>
 <main>
 <div class="container">
+    {% block content-menu %}
+    {% endblock %}
     {% block content %}
-        {% block content-menu %}
-        {% endblock %}
     {% endblock %}
 </div>
 </main>
