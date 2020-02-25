@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-/env
 
+# virtualenv
+./venv
 
 # dependencies
 
@@ -39,11 +40,6 @@ yarn-error.log*
 # mypy
 .mypy_cache/
 
-# virtualenv
-.venv
-venv/
-/venv
-ENV/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
